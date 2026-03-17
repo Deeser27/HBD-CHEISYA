@@ -1181,5 +1181,19 @@ button {
     gap: 14px;
   }
 }
+.nav-zone.disabled {
+  pointer-events: none;
+}
+
+.pick-grid,
+.pick-card,
+.gallery-track,
+.cake-area,
+.heart-game-area,
+.hold-card,
+.letter-box {
+  position: relative;
+  z-index: 20;
+}
 
 
