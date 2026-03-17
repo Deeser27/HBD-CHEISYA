@@ -1,3 +1,13 @@
+const navLeft = document.getElementById('navLeft');
+const navRight = document.getElementById('navRight');
+function updateNavZones() {
+  const interactiveScenes = [2, 3, 4, 5, 6];
+  const shouldDisable = interactiveScenes.includes(currentScene);
+
+  navLeft.classList.toggle('disabled', shouldDisable);
+  navRight.classList.toggle('disabled', shouldDisable);
+}
+
 const music = document.getElementById('bgMusic');
 const musicIcon = document.getElementById('musicIcon');
 
@@ -81,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGallery();
   updateProgress();
   updateMeta();
+  updateNavZones();
   updateLockScreenTime();
   setInterval(updateLockScreenTime, 1000);
   bindSwipe();
@@ -156,6 +167,7 @@ function showScene(index) {
     scenes[currentScene].classList.add('active');
     updateProgress();
     updateMeta();
+    updateNavZones();
   });
 
   if (currentScene === 6) {
