@@ -528,24 +528,25 @@ function bindSwipe() {
     touchStartY = e.changedTouches[0].clientY;
   }, { passive: true });
 
-  sceneStage.addEventListener('touchend', (e) => {
-    if (e.target.closest('.gallery-track')) return;
+sceneStage.addEventListener('touchend', (e) => {
+  if (e.target.closest('.gallery-track')) return;
+  if ([4, 5, 6].includes(currentScene)) return;
 
-    const endX = e.changedTouches[0].clientX;
-    const endY = e.changedTouches[0].clientY;
+  const endX = e.changedTouches[0].clientX;
+  const endY = e.changedTouches[0].clientY;
 
-    const diffX = endX - touchStartX;
-    const diffY = endY - touchStartY;
+  const diffX = endX - touchStartX;
+  const diffY = endY - touchStartY;
 
-    if (Math.abs(diffY) > 80) return;
+  if (Math.abs(diffY) > 80) return;
 
-    if (diffX < -55) {
-      storyNextTap();
-    } else if (diffX > 55) {
-      storyBack();
-    }
-  }, { passive: true });
-}
+  if (diffX < -55) {
+    storyNextTap();
+  } else if (diffX > 55) {
+    storyBack();
+  }
+}, { passive: true });
+
 
 function sendWA() {
   const phoneNumber = '6281234567890';
