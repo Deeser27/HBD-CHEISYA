@@ -198,16 +198,25 @@ body {
   padding:
     calc(98px + var(--safe-top))
     18px
-    calc(112px + var(--safe-bottom))
+    calc(120px + var(--safe-bottom))
     18px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 18px;
   text-align: center;
   position: relative;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+
+.scene-inner::-webkit-scrollbar {
+  display: none;
+}
+
 
 .hero-scene {
   gap: 20px;
@@ -367,11 +376,22 @@ button {
 }
 
 .bottom-action {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: calc(18px + var(--safe-bottom));
-  z-index: 20;
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: calc(12px + var(--safe-bottom));
+  margin-top: auto;
+  padding-top: 10px;
+  z-index: 30;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.55) 30%,
+    rgba(255,255,255,0.82) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
 }
 
 .bottom-action .btn-primary,
@@ -379,6 +399,7 @@ button {
 .bottom-action .btn-secondary {
   width: 100%;
 }
+
 
 .final-buttons {
   display: grid;
@@ -1129,4 +1150,36 @@ button {
 ::view-transition-new(root) {
   animation-duration: 420ms;
 }
+@media (max-width: 430px) {
+  .gallery-card {
+    flex-basis: 88%;
+  }
+
+  .gallery-card img {
+    height: 220px;
+  }
+
+  .scene-title {
+    font-size: 1.35rem;
+  }
+
+  .scene-subtitle,
+  .status-note {
+    font-size: 0.95rem;
+  }
+
+  .story-topbar {
+    top: calc(24px + var(--safe-top));
+  }
+
+  .scene-inner {
+    padding:
+      calc(92px + var(--safe-top))
+      16px
+      calc(118px + var(--safe-bottom))
+      16px;
+    gap: 14px;
+  }
+}
+
 
