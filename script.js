@@ -55,9 +55,9 @@ const metaText = [
 ];
 
 const letterParts = [
-  'Selamat ulang tahun ya, sayangku Cheisya Aqila. 🥺💖',
+  'Selamat ulang tahun yaaa, sayangku Cheisya Aqila. 🥺💖',
   'Hari ini aku cuma pengen kamu tahu kalau kamu itu spesial banget buat aku.',
-  'Bukan cuma karena hari ini hari lahirmu, tapi karena kamu bikin banyak hal terasa lebih indah, lebih hangat, dan lebih berarti.',
+  'Bukan cuma karena hari ini hari lahirmu, tapi karena kamu bikin banyak hal terasa lebih indah, lebih hangat, dan lebih berarti anjay kwkwkwk',
   'Semoga di umur kamu yang baru ini, semua hal baik datang pelan-pelan ke hidup kamu.',
   'Semoga kamu selalu sehat, hatinya dijaga, langkahnya dimudahkan, dan semua doa-doa kecil yang kamu simpan diam-diam bisa satu per satu jadi nyata.',
   'Aku bersyukur banget punya kamu. Makasih ya sayang, sudah hadir, bertahan, dan jadi diri kamu yang manis, kuat, dan berharga itu.',
@@ -65,12 +65,12 @@ const letterParts = [
 ];
 
 const galleryImages = [
-  { src: 'foto1.jpeg', title: 'Foto 1', caption: 'Taruh foto favorit kalian di sini 🤍' },
-  { src: 'foto2.jpeg', title: 'Foto 2', caption: 'Yang ini juga bisa kamu ganti sesuka hati 🌷' },
-  { src: 'foto3.jpeg', title: 'Foto 3', caption: 'Momen kecil yang manis ✨' },
-  { src: 'foto4.jpeg', title: 'Foto 4', caption: 'Kalau senyum gini aku kalah 💖' },
-  { src: 'foto5.jpeg', title: 'Foto 5', caption: 'Simpan kenangan favorit di sini 🎀' },
-  { src: 'foto6.jpeg', title: 'Foto 6', caption: 'Tambah sebanyak yang kamu mau 📸' }
+  { src: 'foto1.jpeg', title: 'Foto 1', caption: '🤍' },
+  { src: 'foto2.jpeg', title: 'Foto 2', caption: ' 🌷' },
+  { src: 'foto3.jpeg', title: 'Foto 3', caption: ' ✨' },
+  { src: 'foto4.jpeg', title: 'Foto 4', caption: ' 💖' },
+  { src: 'foto5.jpeg', title: 'Foto 5', caption: ' 🎀' },
+  { src: 'foto6.jpeg', title: 'Foto 6', caption: ' 📸' }
 ];
 
 let letterIndex = 0;
