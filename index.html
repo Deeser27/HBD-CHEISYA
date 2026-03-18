@@ -2,11 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
-  <title>Story Ulang Tahun Cheisya Aqila 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun, Cheisya Aqila 🎂</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,31 +15,29 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
-
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
   <div class="particles" id="particles"></div>
   <div class="confetti-container" id="confettiContainer"></div>
   <div class="heart-rain" id="heartRain"></div>
-
-  <audio id="bgMusic" loop>
-    <source src="ninu.mp3" type="audio/mpeg" />
-  </audio>
 
   <button class="music-control" onclick="toggleMusic()" aria-label="Toggle music">
     <i id="musicIcon" class="fas fa-music"></i>
   </button>
 
-  <!-- PIN -->
+  <audio id="bgMusic" loop>
+    <source src="ninu.mp3" type="audio/mpeg" />
+    Browser kamu tidak mendukung audio.
+  </audio>
+
   <dialog id="pinDialog" class="pin-dialog">
     <div class="pin-shell" id="pinCard">
-      <div class="pin-top">
-        <div class="pin-time" id="lockTime">03:30</div>
-        <div class="pin-date" id="lockDate">Senin, 30 Maret</div>
+      <div class="lock-top">
+        <div class="lock-time" id="lockTime">13:49</div>
+        <div class="lock-date" id="lockDate">Selasa, 17 Maret</div>
       </div>
 
-      <div class="pin-lock">🔐</div>
+      <div class="pin-lock-icon">🔐</div>
       <h2 class="pin-title">Untuk lanjut kamu harus jawab pertanyaan ku</h2>
       <p class="pin-subtitle">Kapan ulang tahun aku?</p>
 
@@ -57,11 +52,11 @@
 
       <input
         id="pinInput"
-        class="pin-input-hidden"
+        class="pin-hidden-input"
         type="password"
         inputmode="numeric"
-        maxlength="6"
         autocomplete="one-time-code"
+        maxlength="6"
         pattern="\d{6}"
       />
 
@@ -75,270 +70,264 @@
         <button type="button" class="key-btn" onclick="addPinDigit('7')">7</button>
         <button type="button" class="key-btn" onclick="addPinDigit('8')">8</button>
         <button type="button" class="key-btn" onclick="addPinDigit('9')">9</button>
-        <button type="button" class="key-btn action" onclick="clearPin()">C</button>
+        <button type="button" class="key-btn key-action" onclick="clearPin()">C</button>
         <button type="button" class="key-btn" onclick="addPinDigit('0')">0</button>
-        <button type="button" class="key-btn action" onclick="deletePin()">⌫</button>
+        <button type="button" class="key-btn key-action" onclick="deletePin()">⌫</button>
       </div>
 
       <p id="pinMessage" class="pin-message">Hint: format DDMMYY yaa</p>
     </div>
   </dialog>
 
-  <!-- Gallery Modal -->
+  <main class="container">
+
+    <section class="section active" id="section1">
+      <div class="glass-card hero-card">
+        <div class="badge">For my favorite girl 💖</div>
+        <div class="hero-emoji">🎂</div>
+
+        <h1 class="greeting">Selamat Ulang Tahun,<br>Cheisya Aqila</h1>
+
+        <p class="subtitle">
+          Hari ini dunia lagi merayakan seseorang yang sangat aku sayang.
+        </p>
+
+        <p class="hero-subtext">
+          Aku bikin sesuatu yang kecil ini khusus buat kamu, sayang.
+        </p>
+
+        <div class="hero-tags">
+          <span>🎉 spesial</span>
+          <span>💌 personal</span>
+          <span>✨ untuk kamu</span>
+        </div>
+
+        <button class="btn-primary glow" onclick="openPinGate()">
+          <i class="fas fa-gift"></i>
+          Buka Kejutannya
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section2">
+      <div class="glass-card">
+        <div class="section-icon">💌</div>
+        <h2 class="section-title">Surat kecil buat sayang</h2>
+        <p class="subtitle">Bacanya pelan-pelan yaa...</p>
+
+        <div class="progress-bar">
+          <div class="progress" id="typingProgress"></div>
+        </div>
+
+        <p id="typingText" class="story-text"></p>
+
+        <button id="nextBtn2" class="btn-primary hidden" onclick="nextSection(3)">
+          <i class="fas fa-arrow-right"></i>
+          Lanjut
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section3">
+      <div class="glass-card">
+        <div class="section-icon">🕯️</div>
+        <h2 class="section-title">Tiup lilinnya dulu</h2>
+        <p class="subtitle">
+          Klik semua lilin sampai padam, terus bikin harapan terbaikmu ya, sayang.
+        </p>
+
+        <div class="cake-area">
+          <div class="cake-top"></div>
+          <div class="candles">
+            <div class="candle" onclick="blowCandle(this)">
+              <span class="flame"></span>
+            </div>
+            <div class="candle" onclick="blowCandle(this)">
+              <span class="flame"></span>
+            </div>
+            <div class="candle" onclick="blowCandle(this)">
+              <span class="flame"></span>
+            </div>
+          </div>
+          <div class="cake-body"></div>
+          <div class="cake-base"></div>
+        </div>
+
+        <p id="candleStatus" class="status-text">Masih ada 3 lilin yang menyala ✨</p>
+
+        <button id="nextBtn3" class="btn-primary hidden" onclick="nextSection(4)">
+          <i class="fas fa-star"></i>
+          Harapannya Dibawa Ya
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section4">
+      <div class="glass-card">
+        <div class="section-icon">🌷</div>
+        <h2 class="section-title">Kenapa kamu spesial</h2>
+        <p class="subtitle">
+          Bukan cuma karena hari ini ulang tahunmu, tapi karena kamu memang seberharga itu.
+        </p>
+
+        <div class="reasons-grid">
+          <div class="reason-card">
+            <div class="reason-emoji">🤍</div>
+            <h3>Kamu menenangkan</h3>
+            <p>Keberadaan kamu bikin hari yang capek terasa lebih ringan.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-emoji">✨</div>
+            <h3>Kamu berharga</h3>
+            <p>Hal-hal kecil dari kamu selalu punya tempat khusus di hati aku.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-emoji">🌸</div>
+            <h3>Kamu manis</h3>
+            <p>Bukan cuma wajahmu, tapi cara kamu hadir di hidup aku juga.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-emoji">💖</div>
+            <h3>Kamu rumah</h3>
+            <p>Di antara banyak hal, kamu jadi tempat pulang paling nyaman.</p>
+          </div>
+        </div>
+
+        <button class="btn-primary" onclick="nextSection(5)">
+          <i class="fas fa-heart"></i>
+          Masih Ada Lagi
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section5">
+      <div class="glass-card">
+        <div class="section-icon">📸</div>
+        <h2 class="section-title">Galeri kita</h2>
+        <p class="subtitle">Klik fotonya buat lihat lebih besar ya, sayang.</p>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+
+        <button class="btn-primary" onclick="nextSection(6)">
+          <i class="fas fa-arrow-right"></i>
+          Lanjut Lagi
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section6">
+      <div class="glass-card">
+        <div class="section-icon">🎀</div>
+        <h2 class="section-title">Quiz kecil buat sayang</h2>
+        <p class="subtitle">Coba tebak, siapa orang paling spesial hari ini? 😆</p>
+
+        <div class="quiz-options">
+          <div class="option" data-answer="wrong" onclick="checkAnswer(this)">
+            <span>😼</span>
+            <span>Kucing paling lucu di komplek</span>
+          </div>
+
+          <div class="option" data-answer="correct" onclick="checkAnswer(this)">
+            <span>👑</span>
+            <span>Cheisya Aqila, pacar aku yang paling aku sayang</span>
+          </div>
+
+          <div class="option" data-answer="wrong" onclick="checkAnswer(this)">
+            <span>🫠</span>
+            <span>Yang lagi baca tapi pura-pura bukan dia</span>
+          </div>
+        </div>
+
+        <div id="quizFeedback" class="feedback"></div>
+
+        <button id="nextBtn6" class="btn-primary hidden" onclick="nextSection(7)">
+          <i class="fas fa-arrow-right"></i>
+          Buka Finalnya
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section7">
+      <div class="glass-card">
+        <div class="section-icon">🎁</div>
+        <h2 class="section-title">Kejutan terakhir</h2>
+        <p class="subtitle">
+          Yang ini paling penting. Jadi pencet tombol yang benar ya, sayang.
+        </p>
+
+        <div class="response-buttons">
+          <button id="btnYes" class="btn-yes" onclick="accepted()">
+            <i class="fas fa-sparkles"></i>
+            Buka Sekarang
+          </button>
+
+          <button
+            id="btnNo"
+            class="btn-no"
+            onmouseover="moveButton()"
+            ontouchstart="moveButton()"
+            onclick="moveButton()"
+          >
+            Jangan dulu 😜
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section8">
+      <div class="glass-card celebration">
+        <div class="celebration-emoji">🎉</div>
+        <h1 class="celebration-title">Selamat Ulang Tahun, Sayang</h1>
+
+        <p class="celebration-text">
+          Untuk Cheisya Aqila, perempuan yang aku sayang, semoga di umur yang baru ini
+          kamu selalu dikelilingi sehat, tenang, bahagia, dan banyak hal baik.
+        </p>
+
+        <p class="celebration-text">
+          Semoga semua doa yang kamu simpan pelan-pelan dikabulkan, semua langkahmu dipermudah,
+          dan semua hari burukmu diganti sama banyak peluk hangat, tawa, dan kebahagiaan.
+        </p>
+
+        <p class="celebration-text highlight-line">
+          Aku cuma mau kamu tahu, kamu berharga banget buat aku. Makasih ya, sayang,
+          sudah hadir di hidup aku. 🤍
+        </p>
+
+        <div class="wish-chips">
+          <span>🎂 panjang umur</span>
+          <span>🌷 sehat selalu</span>
+          <span>✨ semua doa terkabul</span>
+          <span>💖 bahagia terus</span>
+        </div>
+
+        <div class="final-buttons">
+          <button class="btn-whatsapp" onclick="sendWA()">
+            <i class="fab fa-whatsapp"></i>
+            Balas di WhatsApp
+          </button>
+
+          <button class="btn-secondary" onclick="replayJourney()">
+            <i class="fas fa-rotate-right"></i>
+            Putar Lagi
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <dialog id="galleryModal" class="gallery-modal">
-    <div class="gallery-modal-card">
+    <div class="gallery-modal-content">
       <button class="gallery-close" onclick="closeGallery()">
         <i class="fas fa-xmark"></i>
       </button>
       <img id="galleryPreview" src="" alt="Preview foto" />
-      <p id="galleryCaption" class="gallery-caption"></p>
+      <p id="galleryCaption" class="subtitle"></p>
     </div>
   </dialog>
-
-  <main class="story-app">
-    <div class="story-phone">
-      <div class="story-progress" id="storyProgress"></div>
-
-      <div class="story-topbar">
-        <div class="profile-mini">
-          <div class="avatar-mini">C</div>
-          <div>
-            <div class="profile-name">Cheisya Aqila</div>
-            <div class="profile-hint" id="storyHint">Tap kanan atau swipe untuk lanjut</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="scene-stage" id="sceneStage">
-        <!-- Scene 1 -->
-        <section class="scene active">
-          <div class="scene-inner hero-scene">
-            <div class="badge">For my favorite girl 💖</div>
-            <div class="hero-emoji">🎂</div>
-            <h1 class="hero-title">Selamat Ulang Tahun,<br>Cheisya Aqila</h1>
-            <p class="hero-subtitle">
-              Aku bikin story versi spesial ini cuma buat kamu, sayang.
-            </p>
-
-            <div class="hero-tags">
-              <span>🎉 spesial</span>
-              <span>💌 personal</span>
-              <span>📸 interaktif</span>
-            </div>
-
-            <button class="btn-primary glow" onclick="openPinGate()">
-              <i class="fas fa-lock-open"></i>
-              Mulai Ceritanya
-            </button>
-          </div>
-        </section>
-
-        <!-- Scene 2 -->
-        <section class="scene">
-          <div class="scene-inner">
-            <div class="scene-icon">💌</div>
-            <h2 class="scene-title">Surat kecil buat sayang</h2>
-            <p class="scene-subtitle">Tap kanan buat munculin kalimat berikutnya.</p>
-
-            <div class="letter-box">
-              <div id="letterContainer" class="letter-container"></div>
-            </div>
-
-            <div class="bottom-action">
-              <button id="btnLetterNext" class="btn-primary hidden" onclick="showScene(2)">
-                <i class="fas fa-arrow-right"></i>
-                Lanjut ke galeri
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Scene 3 -->
-        <section class="scene">
-          <div class="scene-inner">
-            <div class="scene-icon">📸</div>
-            <h2 class="scene-title">Beberapa Fotoo Fotoo kamuu 2025</h2>
-            <p class="scene-subtitle">Swipe fotonya. Tap untuk lihat lebih besar.</p>
-
-            <div class="gallery-track" id="galleryTrack"></div>
-            <div class="gallery-dots" id="galleryDots"></div>
-
-            <p id="galleryInfo" class="status-note">Buka minimal 2 foto dulu yaa 💖</p>
-
-            <div class="bottom-action">
-              <button id="btnGalleryNext" class="btn-primary hidden" onclick="showScene(3)">
-                <i class="fas fa-arrow-right"></i>
-                Lanjut lagi
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Scene 4 -->
-        <section class="scene">
-          <div class="scene-inner">
-            <div class="scene-icon">🕯️</div>
-            <h2 class="scene-title">Tiup lilinnya dulu</h2>
-            <p class="scene-subtitle">Klik semua lilin sampai padam ya, sayang.</p>
-
-            <div class="cake-area">
-              <div class="cake-top"></div>
-              <div class="candles">
-                <div class="candle" onclick="blowCandle(this)">
-                  <span class="flame"></span>
-                </div>
-                <div class="candle" onclick="blowCandle(this)">
-                  <span class="flame"></span>
-                </div>
-                <div class="candle" onclick="blowCandle(this)">
-                  <span class="flame"></span>
-                </div>
-              </div>
-              <div class="cake-body"></div>
-              <div class="cake-base"></div>
-            </div>
-
-            <p id="candleStatus" class="status-note">Masih ada 3 lilin yang menyala ✨</p>
-
-            <div class="bottom-action">
-              <button id="btnCandleNext" class="btn-primary hidden" onclick="showScene(4)">
-                <i class="fas fa-star"></i>
-                Bawa harapannya
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Scene 5 -->
-        <section class="scene">
-          <div class="scene-inner">
-            <div class="scene-icon">🌷</div>
-            <h2 class="scene-title">Pilih 3 yang paling kamu</h2>
-            <p class="scene-subtitle">Kalau udah pilih 3, aku kasih bagian berikutnya.</p>
-
-            <div class="pick-grid" id="pickGrid">
-              <button class="pick-card" data-pick="Menenangkan">🤍 Menenangkan</button>
-              <button class="pick-card" data-pick="Manis">🌸 Manis</button>
-              <button class="pick-card" data-pick="Berharga">✨ Berharga</button>
-              <button class="pick-card" data-pick="Ngeselin">😠 Ngeselin</button>
-              <button class="pick-card" data-pick="Lucu">😆 Lucu</button>
-              <button class="pick-card" data-pick="Cantik">💖 Cantik</button>
-            </div>
-
-            <div class="love-meter">
-              <div class="love-meter-fill" id="loveMeterFill"></div>
-            </div>
-
-            <p id="pickStatus" class="status-note">Pilih 3 dulu ya sayangg 💌</p>
-
-            <div class="bottom-action">
-              <button id="btnPickNext" class="btn-primary hidden" onclick="showScene(5)">
-                <i class="fas fa-arrow-right"></i>
-                Masih ada lagi
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Scene 6 -->
-        <section class="scene">
-          <div class="scene-inner">
-            <div class="scene-icon">💖</div>
-            <h2 class="scene-title">Tangkap hati buat aku</h2>
-            <p class="scene-subtitle">Tap hati yang muncul sampai terkumpul 8 yaa.</p>
-
-            <div class="heart-game-area" id="heartGameArea"></div>
-
-            <div class="game-panel">
-              <div class="counter-pill">
-                <span id="heartCount">0</span>/8 hati terkumpul
-              </div>
-              <p id="heartGameStatus" class="status-note">Ayo mulai tangkap hatinya 💘</p>
-            </div>
-
-            <div class="bottom-action">
-              <button id="btnHeartNext" class="btn-primary hidden" onclick="showScene(6)">
-                <i class="fas fa-arrow-right"></i>
-                Buka kejutan akhir
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Scene 7 -->
-        <section class="scene">
-          <div class="scene-inner">
-            <div class="scene-icon">🎁</div>
-            <h2 class="scene-title">Kejutan terakhir</h2>
-            <p class="scene-subtitle">Tekan dan tahan sampai penuh yaa sayang.</p>
-
-            <div class="hold-card">
-              <button
-                id="holdButton"
-                class="hold-button"
-                type="button"
-              >
-                <span>Tekan & Tahan</span>
-              </button>
-
-              <div class="hold-bar">
-                <div class="hold-fill" id="holdFill"></div>
-              </div>
-
-              <p id="holdStatus" class="status-note">
-                Tahan tombolnya sampai penuh untuk buka kejutan
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Scene 8 -->
-        <section class="scene">
-          <div class="scene-inner final-scene">
-            <div class="celebration-emoji">🎉</div>
-            <h1 class="final-title">Selamattt Ulangg Tahunnn Sayangg</h1>
-
-            <p class="final-text">
-              Semoga di umur yang baru ini kamu selalu dikelilingi sehat, tenang, bahagia,
-              dan semua hal baik datang satu per satu ke hidup kamuuu
-            </p>
-
-            <p class="final-text">
-              Semoga langkahmu dipermudah, doamu dikabulkan, dan semua hari capekmu dan lelah letih kmu diganti
-              sama tawa, peluk hangat, dan banyak kebahagiaan.
-            </p>
-
-            <p class="final-text highlight">
-              Kamu berharga banget buat akuuu. Makasih ya sudah hadir di hidup aku. 🤍
-            </p>
-
-            <div class="wish-chips">
-              <span>🎂 panjang umur</span>
-              <span>🌷 sehat selalu</span>
-              <span>✨ semua doa terkabul</span>
-              <span>💖 bahagia terus</span>
-            </div>
-
-            <div class="bottom-action final-buttons">
-              <button class="btn-whatsapp" onclick="sendWA()">
-                <i class="fab fa-whatsapp"></i>
-                Balas di WhatsApp
-              </button>
-
-              <button class="btn-secondary" onclick="replayJourney()">
-                <i class="fas fa-rotate-right"></i>
-                Putar Lagi
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <button id="navLeft" class="nav-zone left" onclick="storyBack()" aria-label="Sebelumnya"></button>
-      <button id="navRight" class="nav-zone right" onclick="storyNextTap()" aria-label="Berikutnya"></button>
-
-    </div>
-  </main>
 
   <script src="script.js"></script>
 </body>
