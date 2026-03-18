@@ -37,12 +37,12 @@ Hari ini, kamu wajib bahagia.
 Dan semoga bukan cuma hari ini, tapi seterusnya juga. 🤍✨`;
 
 const galleryImages = [
-  { src: 'foto1.jpg', caption: 'Foto favorit aku yang ini 🤍' },
-  { src: 'foto2.jpg', caption: 'Cantik banget di foto ini 🌷' },
-  { src: 'foto3.jpg', caption: 'Momen kecil yang aku suka ✨' },
-  { src: 'foto4.jpg', caption: 'Kalau senyum gini aku kalah 💖' },
-  { src: 'foto5.jpg', caption: 'Lucu, manis, dan spesial 🎀' },
-  { src: 'foto6.jpg', caption: 'Simpan banyak foto favorit di sini 📸' }
+  { src: 'foto1.jpeg', caption: 'Foto favorit aku yang ini 🤍' },
+  { src: 'foto2.jpeg', caption: 'Cantik banget di foto ini 🌷' },
+  { src: 'foto3.jpeg', caption: 'Momen kecil yang aku suka ✨' },
+  { src: 'foto4.jpeg', caption: 'Kalau senyum gini aku kalah 💖' },
+  { src: 'foto5.jpeg', caption: 'Lucu, manis, dan spesial 🎀' },
+  { src: 'foto6.jpeg', caption: 'Simpan banyak foto favorit di sini 📸' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
