@@ -25,25 +25,33 @@ let pinValue = '';
 
 const CORRECT_PIN = '270806';
 
-const textToType = `Selamat ulang tahun ya, sayangku Cheisya Aqila. 🥺💖
+const textToType = `Selamat ulang tahun yaaa sayangku Cheisya Aqila. 🥺💖
 
-Hari ini aku cuma pengen kamu tahu kalau kamu itu spesial banget buat aku. Bukan cuma karena hari ini hari lahirmu, tapi karena kamu adalah salah satu alasan kenapa banyak hal terasa lebih indah, lebih hangat, dan lebih berarti.
+Hari ini aku cuma pengen kamu taukk kaloo kamu itu spesial banget buat akuu. bukkan cuma karena hari ini hari ultahh kamuu, tapi karena kamu emangg selaluu spesiall di hatiku
 
-Semoga di umur kamu yang baru ini, semua hal baik datang pelan-pelan ke hidup kamu. Semoga kamu selalu sehat, hatinya dijaga, langkahnya dimudahkan, dan semua doa-doa kecil yang kamu simpan diam-diam bisa satu per satu jadi nyata.
+akuu cuma mau bialngg, semoga di umur kamu yang baru ini, semua hal baik datang ke hidup kamu. Semoga kamu selalu sehat, hatinya dijaga, langkahnya dimudahkan, dan semua doa doa kamu di kabulkann menjadi nyataa
 
-Aku tahu aku mungkin nggak selalu sempurna, tapi satu hal yang pasti: aku bersyukur banget punya kamu. Makasih ya, sayang, sudah hadir, sudah bertahan, dan sudah jadi Cheisya Aqila yang manis, kuat, dan berharga itu.
+Aku tahu aku mungkin gakk selalu sempurna, tapi satu hal yang pasti: aku bersyukur banget kamuu mau sama aku, semoga kamu selalu seahtt dan mauk teruss sama aku sampai kapanpun 🥰
 
-Hari ini, kamu wajib bahagia.
+Hari ini kamu haruss bahagiaa
 Dan semoga bukan cuma hari ini, tapi seterusnya juga. 🤍✨`;
 
+// GANTI INI SAJA - 12 FOTO LENGKAP
 const galleryImages = [
-  { src: 'foto1.jpeg', caption: 'Foto favorit aku yang ini 🤍' },
-  { src: 'foto2.jpeg', caption: 'Cantik banget di foto ini 🌷' },
-  { src: 'foto3.jpeg', caption: 'Momen kecil yang aku suka ✨' },
-  { src: 'foto4.jpeg', caption: 'Kalau senyum gini aku kalah 💖' },
-  { src: 'foto5.jpeg', caption: 'Lucu, manis, dan spesial 🎀' },
-  { src: 'foto6.jpeg', caption: 'Simpan banyak foto favorit di sini 📸' }
+  { src: 'foto1.jpeg', caption: 'Foto pertama kamu yang aku punya yg ini ❤️' },
+  { src: 'foto2.jpeg', caption: ' 😍' },
+  { src: 'foto3.jpeg', caption: ' 📸' },
+  { src: 'foto4.jpeg', caption: ' 🥰' },
+  { src: 'foto5.jpeg', caption: ' 💕' },
+  { src: 'foto6.jpeg', caption: ' 🌸' },
+  { src: 'foto7.jpeg', caption: ' ✨' },
+  { src: 'foto8.jpeg', caption: ' 👌' },
+  { src: 'foto9.jpeg', caption: ' 😊' },
+  { src: 'foto10.jpeg', caption: ' 🏆' },
+  { src: 'foto11.jpeg', caption: ' 💖' },
+  { src: 'foto12.jpeg', caption: ' 💕' }
 ];
+
 
 document.addEventListener('DOMContentLoaded', () => {
   createParticles();
@@ -137,7 +145,7 @@ function clearPin() {
 
 function checkPin() {
   if (pinValue === CORRECT_PIN) {
-    pinMessage.textContent = 'Yey benar, lanjut ya sayang 💖';
+    pinMessage.textContent = 'Yey benerrr, lanjut ya sayang 💖';
     pinMessage.className = 'pin-message success';
 
     setTimeout(() => {
@@ -250,7 +258,7 @@ function blowCandle(element) {
   if (remaining > 0) {
     candleStatus.innerHTML = `Masih ada ${remaining} lilin yang menyala ✨`;
   } else {
-    candleStatus.innerHTML = 'Yeyy, semua lilinnya sudah padam. Semoga semua harapan kamu terkabul ya, sayang 🤍';
+    candleStatus.innerHTML = 'Yeyy, semua lilinnya sudah padam. Semoga semua harapan kamu terkabul yaaa wkwkwkwk';
     document.getElementById('nextBtn3').classList.remove('hidden');
     createConfetti(35);
   }
@@ -290,7 +298,7 @@ function checkAnswer(element) {
 
   if (element.dataset.answer === 'correct') {
     element.classList.add('correct');
-    feedback.innerHTML = 'Tepat banget. Hari ini memang harinya Cheisya Aqila, pacar aku yang paling aku sayang. 💖';
+    feedback.innerHTML = 'TEAPTT SEKALII, 100 Buatt kamuu, Hari ini memang hari ulang tahunnya Cheisya Aqila, orang yang aku sayang 💖';
     feedback.className = 'feedback success';
     nextBtn.classList.remove('hidden');
     createConfetti(20);
@@ -381,8 +389,8 @@ function launchHeartRain(amount = 30) {
 }
 
 function sendWA() {
-  const phoneNumber = '6281234567890';
-  const message = 'Makasii banyak yaa sayang udah bikinin aku web ulang tahun secantik ini 🥺💖';
+  const phoneNumber = '628977774031';
+  const message = 'Makasii banyak yaa udahh ngucapinn ultahh akuu 🥺💖';
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
