@@ -390,7 +390,7 @@ function launchHeartRain(amount = 30) {
 
 function sendWA() {
   const phoneNumber = '628977774031';
-  const message = 'Makasii banyak yaa udahh ngucapinn ultahh akuu 🥺💖';
+  const message = 'AKUU UDAHH BACAA UCAPANN DARII KAMUUU 🥺💖';
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
