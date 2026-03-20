@@ -976,3 +976,9 @@ h1, h2, h3, p, button, span, div, img {
     transform: scale(0.98);
   }
 }
+/* TAMBAHKAN INI DI AKHIR style.css JIKA BELUM ADA */
+@media (min-width: 481px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
