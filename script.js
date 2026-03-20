@@ -49,7 +49,7 @@ const galleryImages = [
   { src: 'foto9.jpeg', caption: ' 😊' },
   { src: 'foto10.jpeg', caption: ' 🏆' },
   { src: 'foto11.jpeg', caption: ' 💖' },
-  { src: 'foto12.jpeg', caption: ' 💕' }
+  { src: 'foto12.png', caption: ' 💕' }
 ];
 
 
