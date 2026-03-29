@@ -23,7 +23,7 @@ let charIndex = 0;
 let blownCandles = 0;
 let pinValue = '';
 
-const CORRECT_PIN = '212212';
+const CORRECT_PIN = '270806';
 
 const textToType = `Selamat ulang tahun yaaa sayangku Cheisya Aqila. 🥺💖
 
